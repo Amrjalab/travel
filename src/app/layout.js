@@ -19,6 +19,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* PayPal SDK script (test mode) */}
+        <script
+          src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+          async
+        ></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
