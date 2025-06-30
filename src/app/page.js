@@ -77,9 +77,10 @@ export default function HomePage() {
                 className="w-20 h-20 rounded-full object-cover mr-4"
               />
               <div className="text-left">
-                <p className="italic text-gray-700">
-                  'Excellent service and great organization. Everything went smoothly from start to end.'
-                </p>
+              <p className="italic text-gray-700">
+  &apos;Excellent service and great organization. Everything went smoothly from start to end.&apos;
+</p>
+
                 <p className="mt-4 font-semibold">– Sarah K.</p>
               </div>
             </div>
@@ -91,9 +92,10 @@ export default function HomePage() {
                 className="w-20 h-20 rounded-full object-cover mr-4"
               />
               <div className="text-left">
-                <p className="italic text-gray-700">
-                  'The places I visited were some of the best travel experiences I’ve ever had.'
-                </p>
+              <p className="italic text-gray-700">
+  &apos;The places I visited were some of the best travel experiences I&apos;ve ever had.&apos;
+</p>
+
                 <p className="mt-4 font-semibold">– Ali M.</p>
               </div>
             </div>
@@ -105,9 +107,10 @@ export default function HomePage() {
                 className="w-20 h-20 rounded-full object-cover mr-4"
               />
               <div className="text-left">
-                <p className="italic text-gray-700">
-                'Not only the views were stunning, but the service was also super professional.'
-                </p>
+              <p className="italic text-gray-700">
+  &apos;Excellent service and great organization. Everything went smoothly from start to end.&apos;
+</p>
+
                 <p className="mt-4 font-semibold">– Lina T.</p>
               </div>
             </div>
