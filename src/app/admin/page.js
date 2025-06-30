@@ -22,7 +22,7 @@ export default function AdminDashboard() {
         console.error('Error loading data:', err);
       } finally {
         setLoading(false);
-      }
+      }q
     }
 
     fetchData();
@@ -153,9 +153,10 @@ export default function AdminDashboard() {
           });
 
           if (res.ok) {
-            alert('✅ Destination added successfully');
-            e.target.reset();
-            setDestinations(prev => [...prev, newDestination]); // Update state with new destination
+       const saved = await res.json();
+  alert('✅ Destination added successfully');
+  e.target.reset();
+  setDestinations(prev => [...prev, saved]); // Update state with new destination
           } else {
             alert('❌ An error occurred while adding');
           }

@@ -1,5 +1,15 @@
 import pool from '@/lib/db';
-
+export async function GET() {
+  try {
+    const res = await pool.query('SELECT * FROM destinations');
+    return new Response(JSON.stringify(res.rows), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    return new Response('Database error', { status: 500 });
+  }
+}
 export async function POST(req) {
   try {
     const body = await req.json();

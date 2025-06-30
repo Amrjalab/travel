@@ -63,9 +63,9 @@ export default function HomePage() {
                 className="w-20 h-20 rounded-full object-cover mr-4"
               />
               <div className="text-left">
-                <p className="italic text-gray-700">
-                  "It was an amazing experience! The views and vibes were unforgettable. Thank you!"
-                </p>
+             <p className="italic text-gray-700">
+  &quot;It was an amazing experience! The views and vibes were unforgettable. Thank you!&quot;
+</p>
                 <p className="mt-4 font-semibold">– Mohamed A.</p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <p className="italic text-gray-700">
-                  "Excellent service and great organization. Everything went smoothly from start to end."
+                  'Excellent service and great organization. Everything went smoothly from start to end.'
                 </p>
                 <p className="mt-4 font-semibold">– Sarah K.</p>
               </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <p className="italic text-gray-700">
-                  "The places I visited were some of the best travel experiences I’ve ever had."
+                  'The places I visited were some of the best travel experiences I’ve ever had.'
                 </p>
                 <p className="mt-4 font-semibold">– Ali M.</p>
               </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
               />
               <div className="text-left">
                 <p className="italic text-gray-700">
-                  "Not only the views were stunning, but the service was also super professional."
+                'Not only the views were stunning, but the service was also super professional.'
                 </p>
                 <p className="mt-4 font-semibold">– Lina T.</p>
               </div>
@@ -156,8 +156,8 @@ export default function HomePage() {
 
     {/* Center Section: Quick Links */}
     <nav className="flex space-x-6 mt-4 md:mt-0">
-      <a href="/" className="hover:text-white transition">Home</a>
-      <a href="/destinations" className="hover:text-white transition">Destinations</a>
+      <Link href="/" className="hover:text-white transition">Home</Link>
+      <Link href="/destinations" className="hover:text-white transition">Destinations</Link>
 <span className="hover:text-white transition cursor-pointer">About Us</span>
 <span className="hover:text-white transition cursor-pointer">Contact</span>
 
@@ -165,8 +165,8 @@ export default function HomePage() {
 
     {/* Right Section: Contact Info */}
     <div className="mt-4 md:mt-0 text-sm">
-      <p>Email: <a href="mailto:info@travelagency.com" className="hover:underline">info@travelagency.com</a></p>
-      <p>Phone: <a href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</a></p>
+      <p>Email: <Link href="mailto:info@travelagency.com" className="hover:underline">info@travelagency.com</Link></p>
+      <p>Phone: <Link href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</Link></p>
     </div>
   </div>
 </footer>
