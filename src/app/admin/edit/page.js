@@ -1,7 +1,10 @@
-import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import BookingClient from './editAdmin';
 
-const EditClient = dynamic(() => import('./EditClient'), { ssr: false });
-
-export default function Page() {
-  return <EditClient />;
+export default function EditPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading edit form...</div>}>
+      <BookingClient />
+    </Suspense>
+  );
 }
