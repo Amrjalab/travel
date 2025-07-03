@@ -7,8 +7,8 @@ export async function POST(req) {
 
   // المقارنة بالقيم من .env
   const isValid =
-    username === process.env.ADMIN_USERNAME &&
-    password === process.env.ADMIN_PASSWORD;
+    username === "amr" &&
+    password === "amr";
 
   if (isValid) {
     const token = jwt.sign({ username }, SECRET, { expiresIn: '1h' });
