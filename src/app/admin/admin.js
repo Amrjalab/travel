@@ -13,6 +13,7 @@ export default function AdminDashboard() {
       try {
         const bookingsRes = await fetch('/api/bookings');
         const bookingsData = await bookingsRes.json();
+          console.log('Data from /api/booking:', bookingsData);
         setBookings(bookingsData);
 
         const destinationsRes = await fetch('/api/destinations');
