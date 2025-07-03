@@ -11,11 +11,12 @@ export default function LoginPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
+   const res = await fetch('/api/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username, password }),
+  credentials: 'include', // 🟢 أضف هذا السطر
+});
 
     if (res.ok) {
       router.push('/admin');
