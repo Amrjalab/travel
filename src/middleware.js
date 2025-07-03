@@ -1,19 +1,26 @@
 import { NextResponse } from 'next/server';
+import jwt from 'jsonwebtoken';
 
-export function middleware(request) {
-  const token = request.cookies.get('token'); // ناخد التوكن من الكوكيز
+const SECRET = process.env.JWT_SECRET;
 
-  // إذا ما فيه توكن أو التوكن غير صحيح نوجهه لصفحة تسجيل الدخول
+export function middleware(req) {
+  const token = req.cookies.get('token')?.value;
+
   if (!token) {
-    const loginUrl = new URL('/login', request.url);
-    return NextResponse.redirect(loginUrl);
+    // ما في توكن؟ روح للصفحة تسجيل الدخول
+    return NextResponse.redirect(new URL('/login', req.url));
   }
 
-  // إذا فيه توكن نسمح بالوصول
-  return NextResponse.next();
+  try {
+    jwt.verify(token, SECRET);
+    // التوكن صحيح، خلي المستخدم يكمل
+    return NextResponse.next();
+  } catch (err) {
+    // التوكن غير صالح أو منتهي، رجع لتسجيل الدخول
+    return NextResponse.redirect(new URL('/login', req.url));
+  }
 }
 
-// حدد أي مسارات يبنيش عليها الميدل وير
 export const config = {
-  matcher: ['/admin/:path*'], // كل الروابط تحت /admin محمية
+  matcher: ['/admin/:path*'], // يحمي كل صفحات /admin وأي مسارات فرعية
 };
