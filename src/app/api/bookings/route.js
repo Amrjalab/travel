@@ -17,3 +17,25 @@ export async function POST(req) {
   }
 }
 
+export async function GET() {
+  try {
+    const result = await pool.query(`
+      SELECT 
+        bookings.*, 
+        destinations.name AS destination_name 
+      FROM bookings 
+      JOIN destinations ON bookings.destination_id = destinations.id
+      ORDER BY bookings.created_at DESC
+    `);
+
+    return new Response(JSON.stringify(result.rows), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('Get Bookings Error:', error);
+    return new Response(JSON.stringify({ message: 'Failed to get bookings' }), {
+      status: 500,
+    });
+  }
+}
